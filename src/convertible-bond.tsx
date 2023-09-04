@@ -66,7 +66,9 @@ export default function Command() {
   const bonds = getBonds() ?? [];
   const currentDate = dayjs().tz("asia/shanghai").format("YYYY-MM-DD");
   return (
-    <MenuBarExtra icon="../assets/menu_icon.png" tooltip={bonds ? `${bonds.length} bonds` : "No bonds"}>
+    <MenuBarExtra
+    icon={{ source: { dark: "../assets/menu_icon.png", light: "../assets/menu_icon_dark.png" }}}
+    tooltip={bonds ? `${bonds.length} bonds` : "No bonds"}>
       <MenuBarExtra.Item title={currentDate} />
       {bonds.map(({ SECUCODE, RATING }: { SECUCODE: string; RATING?: string }) => (
         <MenuBarExtra.Item
