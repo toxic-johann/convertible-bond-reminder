@@ -68,7 +68,7 @@ export default function Command() {
   return (
     <MenuBarExtra
     icon={{ source: { dark: "../assets/menu_icon.png", light: "../assets/menu_icon_dark.png" }}}
-    tooltip={bonds ? `${bonds.length} bonds` : "No bonds"}>
+    tooltip={bonds[0]?.RATING ? `${bonds.length} bonds` : "No bonds"}>
       <MenuBarExtra.Item title={currentDate} />
       {bonds.map(({ SECUCODE, RATING }: { SECUCODE: string; RATING?: string }) => (
         <MenuBarExtra.Item
